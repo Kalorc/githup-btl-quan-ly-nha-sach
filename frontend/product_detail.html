@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - BookStore</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js" defer></script>
+    <script src="js/product.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="logo">BookStore</div>
+
+    <nav>
+        <div class="dropdown">
+            <a class="drop-btn">Tài khoản ▾</a>
+            <div class="dropdown-menu">
+                <a href="index.html">Trang chủ</a>
+                <a href="product.html">Sản phẩm</a>
+                <a href="cart.html">Giỏ hàng</a>
+                <a href="purchased.html">Sản phẩm đã mua</a>
+                <a href="renting.html">Sách đang thuê</a>
+                <a href="history.html">Lịch sử giao dịch</a>
+                <a href="login.html">Đăng nhập</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main class="product-detail-page">
+        <section class="product-detail" id="productDetail">
+            <!-- JS sẽ render thông tin sản phẩm vào đây -->
+            <div class="product-detail-image">
+                <img src="assets/abc.png" alt="Sản phẩm" id="productImage" />
+            </div>
+            <div class="product-detail-info">
+                <h1 id="productTitle">Tên sản phẩm</h1>
+                <p class="product-detail-category" id="productCategory">Danh mục</p>
+                <p class="product-detail-price" id="productPrice">0đ</p>
+                <p class="product-detail-desc" id="productDescription">
+                    Mô tả sản phẩm sẽ hiển thị ở đây.
+                </p>
+
+                <div class="product-detail-actions">
+                    <button id="addToCartBtn">Thêm vào giỏ hàng</button>
+                    <button id="rentBookBtn" class="secondary">Thuê sách</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 BookStore - All Rights Reserved
+    </footer>
+</body>
+</html>

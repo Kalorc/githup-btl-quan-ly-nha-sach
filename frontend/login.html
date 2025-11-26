@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - BookStore</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/login.js" defer></script>
+
+
+</head>
+
+<body class="login-page">
+    <header>
+        <div class="logo">BookStore</div>
+
+        <nav>
+            <div class="dropdown">
+                <a class="drop-btn">Tài khoản ▾</a>
+                <div class="dropdown-menu">
+                    <a href="index.html">Trang chủ</a>
+                    <a href="product.html">Sản phẩm</a>
+                    <a href="cart.html">Giỏ hàng</a>
+                    <a href="purchased.html">Sản phẩm đã mua</a>
+                    <a href="renting.html">Sách đang thuê</a>
+                    <a href="history.html">Lịch sử giao dịch</a>
+                    <a href="login.html">Đăng nhập</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="auth-page">
+        <section class="auth-container">
+            <h1>Đăng nhập</h1>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Nhập email" required />
+                </div>
+
+                <div class="form-group password-wrapper">
+                    <label for="loginPassword">Mật khẩu</label>
+                    <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required />
+                    <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
+                </div>
+
+
+                <button type="submit" id="loginBtn">Đăng nhập</button>
+
+                <p class="auth-switch">
+                    Chưa có tài khoản?
+                    <a href="register.html">Đăng ký ngay</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        NHÀ CÁI ĐẾN TỪ CHÂU PHI @ thangbaitaikynang@gmail.com
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,698 @@
+/* ============================== GLOBAL STYLES ============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔥 THÊM ĐỂ FOOTER LUÔN Ở DƯỚI */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-size: cover;
+    /* lấp kín toàn trang */
+    background-repeat: no-repeat;
+    /* không lặp lại ảnh */
+    background-position: center;
+    /* căn giữa */
+    background-attachment: fixed;
+    /* giữ nguyên khi cuộn – rất đẹp */
+    color: #2d3436;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* đảm bảo thân trang đủ chiều cao */
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ============================== HEADER ============================== */
+header {
+    width: 100%;
+    background: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+header nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #2d3436;
+    font-weight: 500;
+    transition: .2s;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #0984e3;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-btn {
+    cursor: pointer;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #2d3436;
+}
+
+.dropdown-menu a:hover {
+    background: #f1f1f1;
+}
+
+/* Hover mở menu */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ============================== HERO BANNER ============================== */
+.hero {
+    width: 100%;
+    height: 300px;
+    /* tuỳ bạn muốn cao bao nhiêu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(237, 5, 121);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* ============================== CATEGORY SECTION ============================== */
+.categories h2,
+.products h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.categories,
+.products {
+    padding: 20px 0;
+}
+
+.category-grid,
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* CARD TÙY CHỈNH KÍCH THƯỚC */
+.category-card,
+.product-card {
+    width: 180px;
+    height: 120px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-card:hover,
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+}
+
+.product-info p {
+    margin-top: 10px;
+    color: #0984e3;
+    font-weight: 600;
+}
+
+/* ============================== PRODUCT DETAIL PAGE ============================== */
+.product-detail-page {
+    padding: 60px 40px;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-info h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.product-detail-price {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #0984e3;
+    font-weight: 600;
+}
+
+.product-detail-actions button {
+    padding: 12px 20px;
+    border: none;
+    background: #0984e3;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.product-detail-actions .secondary {
+    background: #636e72;
+}
+
+.product-detail-actions button:hover {
+    opacity: .85;
+}
+
+/* ============================== CART NEW DESIGN (All in 1 box) ============================== */
+.cart-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cart-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.cart-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* TABLE */
+.cart-table {
+    width: 100%;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header {
+    font-weight: 600;
+}
+
+.cart-col-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-col-product img {
+    width: 55px;
+    height: 55px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.cart-col {
+    display: flex;
+    align-items: center;
+}
+
+.cart-col.total-price {
+    justify-content: flex-end;
+    /* căn phải */
+    text-align: right;
+}
+
+/* QUANTITY BUTTON */
+.quantity-box {
+    justify-content: center;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #aaa;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.quantity-box input {
+    width: 35px;
+    text-align: center;
+    border: none;
+    pointer-events: none;
+}
+
+/* SUMMARY */
+.cart-summary {
+    margin-top: 20px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.cart-summary h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #0984e3;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.checkout-btn:hover {
+    opacity: 0.85;
+}
+
+/* ============================== AUTH PAGES ============================== */
+.product-list,
+.cart-page,
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* 🔥 CHỈNH LOGIN & REGISTER VỪA MÀN HÌNH */
+.auth-page {
+    height: 100vh;
+    background: url("../assets/pro.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    /* bỏ padding thừa */
+}
+
+.auth-container {
+    background: white;
+    padding: 20px 25px;
+    max-width: 350px;
+    /* thu nhỏ form */
+    max-height: 85vh;
+    /* không vượt màn */
+    overflow-y: auto;
+    /* nếu cao quá chỉ form cuộn */
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form .form-group {
+    margin-bottom: 30px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #0984e3;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.auth-switch {
+    margin-top: 15px;
+    /* 👈 chỉnh khoảng cách xuống dưới */
+    text-align: center;
+    /* tùy chọn: căn giữa cho đẹp */
+    font-size: 14px;
+}
+
+/* ============================== ADMIN ============================== */
+.admin-layout {
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+.admin-sidebar {
+    background: #2d3436;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.admin-sidebar a {
+    display: block;
+    color: white;
+    margin: 15px 0;
+    text-decoration: none;
+}
+
+.admin-main {
+    padding: 30px;
+}
+
+.admin-table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ============================== FOOTER ============================== */
+footer {
+    margin-top: auto;
+    /* ép footer xuống đáy */
+    background: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ============================ PAGE WRAPPER ============================ */
+.page-container {
+    max-width: 900px;
+    margin: 50px auto 70px;
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.list-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 15px 10px;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.item-sub {
+    font-size: 14px;
+    color: gray;
+}
+
+.item-right {
+    text-align: right;
+    width: 150px;
+}
+
+.item-price {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0984e3;
+}
+
+.item-qty {
+    font-size: 14px;
+    color: #555;
+}
+
+.item-actions button {
+    padding: 6px 14px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 14px;
+}
+
+.item-actions button:hover {
+    opacity: .85;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    pointer-events: auto;
+}
+
+/* ============================ ADMIN DASHBOARD STAT BOX ============================ */
+.stat-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 18px;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0984e3;
+}
+
+.admin-table img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-table button {
+    padding: 6px 12px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.admin-table button:hover {
+    opacity: .85;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.status.pending {
+    background: #f1c40f;
+}
+
+.status.approved {
+    background: #3498db;
+}
+
+.status.completed {
+    background: #2ecc71;
+}
+
+.status.canceled {
+    background: #e74c3c;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    opacity: .85;
+}
+
+.status.active {
+    background: #2ecc71;
+}
+
+.status.banned {
+    background: #e74c3c;
+}
+
+.status.renting {
+    background: #3498db;
+}
+
+.status.overdue {
+    background: #e67e22;
+}
+
+.status.returned {
+    background: #2ecc71;
+}
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 300px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px;
+}
+
+.search-btn {
+    padding: 8px 14px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background: #555;
+}

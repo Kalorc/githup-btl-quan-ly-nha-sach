@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm - BookStore</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/index.js" defer></script>
+    <script src="js/product.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">BookStore</div>
+
+        <nav>
+            <div class="dropdown">
+                <a class="drop-btn">Tài khoản ▾</a>
+                <div class="dropdown-menu">
+                    <a href="index.html">Trang chủ</a>
+                    <a href="product.html">Sản phẩm</a>
+                    <a href="cart.html">Giỏ hàng</a>
+                    <a href="purchased.html">Sản phẩm đã mua</a>
+                    <a href="renting.html">Sách đang thuê</a>
+                    <a href="history.html">Lịch sử giao dịch</a>
+                    <a href="login.html">Đăng nhập</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="page-title">
+        <h1>Tất cả sản phẩm</h1>
+        <p>Danh sách Sách, Thuê sách và Văn phòng phẩm</p>
+    </section>
+
+    <section class="filter-bar">
+        <select id="categoryFilter">
+            <option value="all">Tất cả</option>
+            <option value="book">Sách bán</option>
+            <option value="rent">Thuê sách</option>
+            <option value="vpp">Văn phòng phẩm</option>
+        </select>
+
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <button id="searchBtn" class="search-btn">OK</button>
+        </div>
+    </section>
+
+    <section class="product-list">
+        <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <footer>
+        © 2025 BookStore - All Rights Reserved
+    </footer>
+</body>
+
+</html>

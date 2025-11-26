@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/admin.js"></script>
+
+</head>
+
+<body>
+<div class="admin-layout">
+
+    <!-- ====================== SIDEBAR ====================== -->
+    <aside class="admin-sidebar">
+        <h2 style="margin-bottom: 20px;">ADMIN</h2>
+
+        <a href="dashboard.html">📊 Thống kê</a>
+        <a href="products.html" class="active">📚 Sản phẩm</a>
+        <a href="orders.html">🧾 Đơn hàng</a>
+        <a href="users.html">👥 Người dùng</a>
+        <a href="rental.html">📦 Sách đang thuê</a>
+        <a href="../index.html">⬅ Quay lại trang khách</a>
+    </aside>
+
+    <!-- ====================== MAIN CONTENT ====================== -->
+    <main class="admin-main">
+
+        <h1 style="margin-bottom: 25px;">📚 Quản lý sản phẩm</h1>
+
+        <!-- Nút thêm sản phẩm -->
+        <div style="margin-bottom: 20px;">
+            <button id="addProductBtn" class="item-actions" style="padding: 8px 16px;">
+                ➕ Thêm sản phẩm
+            </button>
+        </div>
+
+        <!-- BẢNG SẢN PHẨM -->
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Danh mục</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                <!-- JS sẽ render ở đây -->
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+
+<!-- ====================== POPUP THÊM/SỬA ====================== -->
+<div id="productModal" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+
+    <div style="
+        background:white; padding:25px; width:420px; border-radius:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,0.2);">
+
+        <h2 id="modalTitle">Thêm sản phẩm</h2>
+
+        <label>Tên sản phẩm</label>
+        <input id="pName" type="text" style="width:100%; padding:10px; margin:8px 0;">
+
+        <label>Giá</label>
+        <input id="pPrice" type="number" style="width:100%; padding:10px; margin:8px 0;">
+
+        <label>Danh mục</label>
+        <select id="pCategory" style="width:100%; padding:10px; margin:8px 0;">
+            <option value="Sách bán">Sách bán</option>
+            <option value="Thuê sách">Thuê sách</option>
+            <option value="Văn phòng phẩm">Văn phòng phẩm</option>
+        </select>
+
+        <label>Link ảnh</label>
+        <input id="pImg" type="text" style="width:100%; padding:10px; margin:8px 0;" 
+               placeholder="../assets/anh1.jpg">
+
+        <div style="text-align:right; margin-top:15px;">
+            <button onclick="closeModal()" 
+                    style="padding:8px 16px; background:#636e72; color:white; border:none; border-radius:6px;">
+                Hủy
+            </button>
+            <button onclick="saveProduct()" 
+                    style="padding:8px 16px; background:#0984e3; color:white; border:none; border-radius:6px; margin-left:8px;">
+                Lưu
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+
+</body>
+</html>

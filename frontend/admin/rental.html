@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sách đang thuê</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/admin.js"></script>
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ====================== SIDEBAR ====================== -->
+    <aside class="admin-sidebar">
+        <h2 style="margin-bottom: 20px;">ADMIN</h2>
+
+        <a href="dashboard.html">📊 Thống kê</a>
+        <a href="products.html">📚 Sản phẩm</a>
+        <a href="orders.html">🧾 Đơn hàng</a>
+        <a href="users.html">👥 Người dùng</a>
+        <a href="rental.html" class="active">📦 Sách đang thuê</a>
+        <a href="../index.html">⬅ Quay lại trang khách</a>
+    </aside>
+
+    <!-- ====================== MAIN CONTENT ====================== -->
+    <main class="admin-main">
+
+        <h1 style="margin-bottom: 25px;">📦 Danh sách sách đang thuê</h1>
+
+        <!-- Bảng sách đang thuê -->
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Người thuê</th>
+                    <th>Sách</th>
+                    <th>Ngày thuê</th>
+                    <th>Ngày phải trả</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody id="rentalTableBody">
+                <!-- JS sẽ render danh sách thuê vào đây -->
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+
+<!-- ====================== POPUP CHI TIẾT THUÊ ====================== -->
+<div id="rentalModal" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+
+    <div style="
+        background:white; padding:25px; width:430px; border-radius:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,0.25);">
+
+        <h2 id="rentalModalTitle">Thông tin thuê</h2>
+
+        <div id="rentalModalContent" style="margin-top:15px;">
+            <!-- JS render chi tiết tại đây -->
+        </div>
+
+        <div style="text-align:right; margin-top:20px;">
+            <button onclick="closeRentalModal()" 
+                    style="padding:8px 16px; background:#636e72; color:white; border:none; border-radius:6px;">
+                Đóng
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+
+</body>
+</html>

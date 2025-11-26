@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/admin.js"></script>
+
+</head>
+
+<body>
+<div class="admin-layout">
+
+    <!-- ====================== SIDEBAR ====================== -->
+    <div class="admin-sidebar">
+    <h2>ADMIN</h2>
+
+    <a href="dashboard.html">📊 Thống kê</a>
+    <a href="products.html">📚 Sản phẩm</a>
+    <a href="orders.html">📄 Đơn hàng</a>
+    <a href="users.html">👤 Người dùng</a>
+    <a href="renting.html">📦 Sách đang thuê</a>
+    <a href="../index.html" class="back">← Quay lại trang khách</a>
+</div>
+
+
+    <!-- ====================== MAIN CONTENT ====================== -->
+    <main class="admin-main">
+
+        <h1 style="margin-bottom: 25px;">📊 Thống kê tổng quan</h1>
+
+        <!-- ====== THỐNG KÊ NHANH ====== -->
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        ">
+            <div class="stat-box">
+                <h3>Tổng sản phẩm</h3>
+                <p id="totalProducts">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Tổng đơn hàng</h3>
+                <p id="totalOrders">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Đang thuê</h3>
+                <p id="totalRenting">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Doanh thu hôm nay</h3>
+                <p id="todayRevenue">0đ</p>
+            </div>
+        </div>
+
+        <!-- ====== BIỂU ĐỒ (SAU NÀY SẼ THÊM JS) ====== -->
+        <div style="margin-top: 40px;">
+            <div class="list-box">
+                <h2 style="margin-bottom: 15px;">📈 Biểu đồ doanh thu</h2>
+                <p>Biểu đồ sẽ được hiển thị sau khi thêm JavaScript.</p>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

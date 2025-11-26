@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/admin.js"></script>
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ====================== SIDEBAR ====================== -->
+    <aside class="admin-sidebar">
+        <h2 style="margin-bottom: 20px;">ADMIN</h2>
+
+        <a href="dashboard.html">📊 Thống kê</a>
+        <a href="products.html">📚 Sản phẩm</a>
+        <a href="orders.html">🧾 Đơn hàng</a>
+        <a href="users.html" class="active">👥 Người dùng</a>
+        <a href="rental.html">📦 Sách đang thuê</a>
+        <a href="../index.html">⬅ Quay lại trang khách</a>
+    </aside>
+
+    <!-- ====================== MAIN CONTENT ====================== -->
+    <main class="admin-main">
+
+        <h1 style="margin-bottom: 25px;">👥 Quản lý người dùng</h1>
+
+        <!-- Bảng người dùng -->
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Quyền</th>
+                    <th>Ngày tạo</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody id="userTableBody">
+                <!-- JS sẽ đổ dữ liệu vào -->
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+<!-- ====================== POPUP CHI TIẾT USERS ====================== -->
+<div id="userModal" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+
+    <div style="
+        background:white; padding:25px; width:420px; border-radius:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,0.25);">
+
+        <h2 id="userModalTitle">Thông tin người dùng</h2>
+
+        <div id="userModalContent" style="margin-top:15px;">
+            <!-- JS render thông tin tại đây -->
+        </div>
+
+        <div style="text-align:right; margin-top:20px;">
+            <button onclick="closeUserModal()" 
+                    style="padding:8px 16px; background:#636e72; color:white; border:none; border-radius:6px;">
+                Đóng
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>
